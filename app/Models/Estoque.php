@@ -22,6 +22,8 @@ class Estoque extends Model
         'quantidade'
     ];
 
+    
+
 
     
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstoqueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('estoque');
+    return view('welcome');
 });
 
-Route::get('estoque', function () {
-    return view('estoque');
-});
+Route::get('/estoque', 'App\Http\Controllers\EstoqueController@index');
+
