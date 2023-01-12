@@ -14,7 +14,7 @@
 
 <body>
   <div class="d-flex justify-content-center">
-    <table class="table table-striped" style="width: 80%; text-align:center; align-items:center;">
+    <table class="table table-striped" style="width: 100%; text-align:center; align-items:center;">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -30,12 +30,20 @@
           <td>{{$estoque->nome_produto;}}</td>
           <td>{{$estoque->quantidade;}}</td>
           <td>{{$estoque->created_at;}}</td>
-      
+
         </tr>
+
       </tbody>
       @endforeach
     </table>
   </div>
+
+  <div>
+    <a href="inserir_produto" class="btn btn-primary">Inserir produto</a>
+  </div>
+
+
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 

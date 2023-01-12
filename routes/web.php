@@ -20,3 +20,7 @@ Route::get('/', function () {
 
 Route::get('/estoque', 'App\Http\Controllers\EstoqueController@index');
 
+Route::get('/estoque/inserir_produto', 'App\Http\Controllers\EstoqueController@inserir_produto');
+
+Route::get('/estoque/insere_novo_produto', 'App\Http\Controllers\EstoqueController@insere_novo_produto');
+
