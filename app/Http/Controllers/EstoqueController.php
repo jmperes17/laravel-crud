@@ -30,7 +30,23 @@ class EstoqueController extends Controller
             'quantidade' => 'required'
         ]);
 
-        dd($request->all());
+        //dd($request->all());
+
+        $nome_produto = $request->input('nome_produto');
+        $quantidade = $request->input('quantidade');
+
+        $arrayInsert = array(
+            'nome_produto' => $nome_produto,
+            'quantidade' => $quantidade,
+            'created_at' => now(),
+            'updated_at' => now()
+        );
+
+        $insert = \DB::table('estoque')->insert($arrayInsert);
+
+        if($insert){
+            return redirect()->route('estoque');
+        }
 
     }
 }

@@ -15,6 +15,11 @@
 <body>
     <div class="d-flex justify-content-center">
         <form action="insere_novo_produto" method="post">
+
+            @csrf
+
+            @method('POST')
+
             <div class="form-group">
                 <label for="nome_produto">Nome do produto</label>
                 <input type="text" class="form-control" name="nome_produto" id="nome_produto" aria-describedby="emailHelp" placeholder="Nome do produto">
@@ -25,7 +30,7 @@
             </div>
             <br>
             <div>
-                <input type="submit" class="btn btn-primary">Cadastrar</button>
+                <button class="btn btn-primary">Cadastrar</button>
             </div>
 
         </form>
