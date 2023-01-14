@@ -82,4 +82,11 @@ class EstoqueController extends Controller
         return redirect()->route('estoque');
 
     }
+
+    public function excluir($id){
+
+        Estoque::where('id', $id)->delete();
+
+        return redirect()->route('estoque');
+    }
 }

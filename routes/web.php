@@ -29,5 +29,7 @@ Route::get('/estoque/editar/{id}', 'App\Http\Controllers\EstoqueController@edita
 
 Route::get('/estoque/editando_produto', 'App\Http\Controllers\EstoqueController@editando_produto');
 
+Route::get('/estoque/excluir/{id}', 'App\Http\Controllers\EstoqueController@excluir');
+
 
 
