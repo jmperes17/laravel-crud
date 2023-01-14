@@ -21,6 +21,8 @@
           <th scope="col">Nome do produto</th>
           <th scope="col">Quantidade</th>
           <th scope="col">Data do cadastro</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +32,8 @@
           <td>{{$estoque->nome_produto;}}</td>
           <td>{{$estoque->quantidade;}}</td>
           <td>{{$estoque->created_at;}}</td>
-
+          <td><a href="editar/<?=$estoque->id; ?>" class="btn btn-success">Editar</a></td>
+          <td><a href="excluir/<?=$estoque->id; ?>" class="btn btn-danger">Excluir</td>
         </tr>
 
       </tbody>

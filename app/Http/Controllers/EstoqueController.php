@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estoque;
+use Estoque as GlobalEstoque;
 use Illuminate\Support\Facades\Validator;
 
 class EstoqueController extends Controller
@@ -47,6 +48,38 @@ class EstoqueController extends Controller
         if($insert){
             return redirect()->route('estoque');
         }
+
+    }
+
+    public function editar($id){
+        
+       $id = Estoque::findOrFail($id);
+
+       return view('editar')->with('id', $id);
+
+    }
+
+    public function editando_produto(Request $request){
+
+        //$produto = Estoque::findOrFail($id);
+
+        $update = array(
+            "nome_produto" => $request->input('nome_produto'),
+            "quantidade" => $request->input('quantidade'),
+            "updated_at" => now()
+        );
+
+        $id = $request->input('id');
+
+        //\DB::table('estoque')->update($update) ;
+
+        Estoque::where('id', $id)->update(
+            ["nome_produto" => $request->input('nome_produto'),
+        "quantidade" => $request->input('quantidade'),
+        "updated_at" => now()]
+        );
+
+        return redirect()->route('estoque');
 
     }
 }

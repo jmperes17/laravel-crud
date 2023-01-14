@@ -25,7 +25,9 @@ Route::get('/estoque/inserir_produto', 'App\Http\Controllers\EstoqueController@i
 
 Route::post('/estoque/insere_novo_produto', 'App\Http\Controllers\EstoqueController@insere_novo_produto');
 
+Route::get('/estoque/editar/{id}', 'App\Http\Controllers\EstoqueController@editar');
 
+Route::get('/estoque/editando_produto', 'App\Http\Controllers\EstoqueController@editando_produto');
 
 
 
