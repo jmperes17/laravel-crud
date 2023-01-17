@@ -15,9 +15,10 @@ use GuzzleHttp\Psr7\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\UsuarioController@index')->name('login');
+
+Route::post('/', 'App\Http\Controllers\UsuarioController@auth')->name('auth');
+ 
 
 Route::get('/estoque', 'App\Http\Controllers\EstoqueController@index')->name('estoque');
 
