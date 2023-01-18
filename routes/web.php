@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstoqueController;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use GuzzleHttp\Psr7\Request;
 Route::get('/', 'App\Http\Controllers\UsuarioController@index')->name('login');
 
 Route::post('/', 'App\Http\Controllers\UsuarioController@auth')->name('auth');
+
+Route::get('/logout', 'App\Http\Controllers\UsuarioController@logout')->name('logout');
  
 
 Route::get('/estoque', 'App\Http\Controllers\EstoqueController@index')->name('estoque');

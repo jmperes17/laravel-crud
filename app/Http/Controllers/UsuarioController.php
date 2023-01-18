@@ -31,4 +31,10 @@ class UsuarioController extends Controller
             'email' => 'Email ou senha não conferem!',
         ]);
     }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->intended('');
+    }
 }

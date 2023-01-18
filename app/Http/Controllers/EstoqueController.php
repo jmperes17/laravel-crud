@@ -11,20 +11,26 @@ class EstoqueController extends Controller
 {
     //
 
+   
+   
 
-    public function index(){
+
+    public function index()
+    {
         $listaEstoque = Estoque::all();
 
         return view('estoque')->with('listaEstoque', $listaEstoque);
     }
 
-    public function inserir_produto(){
-       
+    public function inserir_produto()
+    {
+
 
         return view('inserir_produto');
     }
 
-    public function insere_novo_produto(Request $request){
+    public function insere_novo_produto(Request $request)
+    {
 
         $request->validate([
             'nome_produto' => 'required',
@@ -45,21 +51,21 @@ class EstoqueController extends Controller
 
         $insert = \DB::table('estoque')->insert($arrayInsert);
 
-        if($insert){
+        if ($insert) {
             return redirect()->route('estoque');
         }
-
     }
 
-    public function editar($id){
-        
-       $id = Estoque::findOrFail($id);
+    public function editar($id)
+    {
 
-       return view('editar')->with('id', $id);
+        $id = Estoque::findOrFail($id);
 
+        return view('editar')->with('id', $id);
     }
 
-    public function editando_produto(Request $request){
+    public function editando_produto(Request $request)
+    {
 
         //$produto = Estoque::findOrFail($id);
 
@@ -74,16 +80,18 @@ class EstoqueController extends Controller
         //\DB::table('estoque')->update($update) ;
 
         Estoque::where('id', $id)->update(
-            ["nome_produto" => $request->input('nome_produto'),
-        "quantidade" => $request->input('quantidade'),
-        "updated_at" => now()]
+            [
+                "nome_produto" => $request->input('nome_produto'),
+                "quantidade" => $request->input('quantidade'),
+                "updated_at" => now()
+            ]
         );
 
         return redirect()->route('estoque');
-
     }
 
-    public function excluir($id){
+    public function excluir($id)
+    {
 
         Estoque::where('id', $id)->delete();
 

@@ -1,3 +1,6 @@
+@if(Auth::guest())
+<script>window.location = "/";</script>
+@endif
 <!doctype html>
 <html lang="en">
 
@@ -34,8 +37,8 @@
           <td>{{$estoque->quantidade;}}</td>
           <td>{{$estoque->created_at;}}</td>
           <td>{{$estoque->updated_at;}}</td>
-          <td><a href="/estoque/editar/<?=$estoque->id; ?>" class="btn btn-success">Editar</a></td>
-          <td><a href="/estoque/excluir/<?=$estoque->id; ?>" class="btn btn-danger">Excluir</td>
+          <td><a href="/estoque/editar/<?= $estoque->id; ?>" class="btn btn-success">Editar</a></td>
+          <td><a href="/estoque/excluir/<?= $estoque->id; ?>" class="btn btn-danger">Excluir</td>
         </tr>
 
       </tbody>
@@ -45,6 +48,7 @@
 
   <div>
     <a href="estoque/inserir_produto" class="btn btn-primary">Inserir produto</a>
+    <a href="logout" class="btn btn-danger">Logout</a>
   </div>
 
 
