@@ -15,3 +15,12 @@ Após isso, basta pegarmos um usuário qualquer no banco para conseguir "logar" 
 - Copiar email de qualquer usuário
 - php artisan serve -> Rodar o sistema e depois inserir no navegador: http://127.0.0.1:8000/
 - Inserir email e senha padrão = 'password'
+
+#IMPORTANTE:
+
+Se quando executado o projeto, retornar erro 500, basta realizar os seguintes comandos:
+
+- copy .env.example .env
+- php artisan key:generate
+
+E então, novamente: php artisan serve
